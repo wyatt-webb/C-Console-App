@@ -37,9 +37,14 @@ class Program
             else
             {
                 menuselection = menuselection.ToUpper();
-                if(menuselection == "Exit" || menuselection == "Stop")
+                if(menuselection == "EXIT" || menuselection == "STOP" || menuselection == "QUIT")
                 {
                     menuselection = "Exit Menu";
+                }
+
+                else
+                {
+                    Console.WriteLine("\nThat is not a valid option.");
                 }
             }
         }
