@@ -31,20 +31,26 @@ class Program
 
             else if(menuselection == "")
             {
+                Console.ForegroundColor = ConsoleColor.Yellow;
                 Console.WriteLine("Please enter a menu option.");
+                Console.ResetColor();
             }
 
-            else
+            else//User trying to exit or bad input
             {
+                Console.ForegroundColor = ConsoleColor.Red;
                 menuselection = menuselection.ToUpper();
-                if(menuselection == "EXIT" || menuselection == "STOP" || menuselection == "QUIT")
+                if(menuselection == "EXIT" || menuselection == "STOP" || menuselection == "QUIT")//Trying to exit
                 {
+                    Console.WriteLine("Exitting");
                     menuselection = "Exit Menu";
+                    Console.ResetColor();
                 }
 
-                else
+                else//Bad input
                 {
                     Console.WriteLine("\nThat is not a valid option.");
+                    Console.ResetColor();
                 }
             }
         }
