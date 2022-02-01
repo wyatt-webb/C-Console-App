@@ -7,6 +7,7 @@ class Program
         while( menuselection!= "Exit Menu")
         {
             Menu.PrintOptions();
+            Console.Write("\nOption: ");
             menuselection = Console.ReadLine();
 
             if(menuselection == "1")
@@ -36,7 +37,7 @@ class Program
                 Console.ResetColor();
             }
 
-            else//User trying to exit or bad input
+            else//User trying to exit or enter bad input
             {
                 Console.ForegroundColor = ConsoleColor.Red;
                 menuselection = menuselection.ToUpper();
