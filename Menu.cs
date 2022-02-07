@@ -58,7 +58,7 @@ public class Menu
         
         Console.WriteLine("Do you wish to search the first sentence of Adventures of Alice in Wonderland with case-senstivity? (Yes) or (No)");
         string searchSensitivity = Console.ReadLine();
-        if(searchSensitivity.Contains("Y") == true)
+        if(searchSensitivity.Contains("Y") == true || searchSensitivity.Contains("y") == true)
 		{
             Console.Write("\nPlease enter the string you would like to look for within the the first sentence of Alice's Adventures in Wonderland: ");
             string searchString = Console.ReadLine();
