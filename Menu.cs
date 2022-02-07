@@ -87,6 +87,26 @@ public class Menu
         {
             Console.Write("Please enter the string you would like to look for within the the first sentence of Alice's Adventures in Wonderland: ");
             string searchString = Console.ReadLine();
+
+            //Make it insensitive
+            searchString = searchString.ToLower();
+            string aaiwLower = aaiw.ToLower();
+
+            bool searchResult = aaiwLower.Contains(searchString);
+            if (searchResult == true)
+            {
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.WriteLine("\n" + searchString + " found: " + searchResult);
+                Console.ResetColor();
+            }
+            else//String not found
+            {
+                Console.ForegroundColor = ConsoleColor.Yellow;
+                Console.WriteLine("\n" + searchString + " found: " + searchResult);
+                Console.ResetColor();
+            }
+
+
             if (searchString == "")
             {
                 Console.ForegroundColor = ConsoleColor.Yellow;
