@@ -13,7 +13,7 @@ public class Menu
     public static void GreetUser(string username)
     {
         Console.Clear();
-        Console.WriteLine("Hello " + username + ".");
+        Console.WriteLine($"Hello {username}.");
     }
 
     public static void PrintOptions()
@@ -35,8 +35,7 @@ public class Menu
         float width = float.Parse(Console.ReadLine());
 
         float area = length * width;
-        Console.WriteLine("The area is: " + area);
-
+        Console.WriteLine($"The area is: {area}");
     }
 
     public static void MPGCalculator()
@@ -48,7 +47,7 @@ public class Menu
         float gallons = float.Parse(Console.ReadLine());
 
         float mpg = miles / gallons;
-        Console.WriteLine("The the trip had a MPG of" + mpg);
+        Console.WriteLine($"The vehicle had an MPG of {mpg}");
     }
 
     public static void SearchString()
@@ -68,18 +67,18 @@ public class Menu
                 Console.WriteLine("\nYou have searched for a space.");
                 Console.ResetColor();
             }
-            //Console.WriteLine(Regex.Match(aaiw, searchString).Success);
+            
             bool searchResult = aaiw.Contains(searchString);
             if (searchResult == true)
             {
                 Console.ForegroundColor = ConsoleColor.Green;
-                Console.WriteLine("\n" + searchString + " found: " + searchResult);
+                Console.WriteLine($"\n{searchString} found: {searchResult}");
                 Console.ResetColor();
             }
             else//String not found
 			{
                 Console.ForegroundColor = ConsoleColor.Yellow;
-                Console.WriteLine("\n" + searchString + " found: " + searchResult);
+                Console.WriteLine($"\n{searchString} found: {searchResult}");
                 Console.ResetColor();
             }
         }
@@ -93,26 +92,37 @@ public class Menu
             string aaiwLower = aaiw.ToLower();
 
             bool searchResult = aaiwLower.Contains(searchString);
-            if (searchResult == true)
-            {
-                Console.ForegroundColor = ConsoleColor.Green;
-                Console.WriteLine("\n" + searchString + " found: " + searchResult);
-                Console.ResetColor();
-            }
-            else//String not found
-            {
-                Console.ForegroundColor = ConsoleColor.Yellow;
-                Console.WriteLine("\n" + searchString + " found: " + searchResult);
-                Console.ResetColor();
-            }
-
-
-            if (searchString == "")
+            if (searchString == " ")
             {
                 Console.ForegroundColor = ConsoleColor.Yellow;
                 Console.WriteLine("You have searched for a space.");
                 Console.ResetColor();
+                Console.WriteLine($"\nA space was found: {searchResult}");
+                return;
             }
+
+            if (searchString == "")
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("\nYou have searched for nothing.");
+                Console.ResetColor();
+                Console.WriteLine("\nIs it possible to find nothing?");
+                return;
+            }
+
+            if (searchResult == true)
+            {
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.WriteLine($"\n{searchString} found: {searchResult}");
+                Console.ResetColor();
+            }
+
+            else//String not found
+            {
+                Console.ForegroundColor = ConsoleColor.Yellow;
+                Console.WriteLine($"\n{searchString} found: {searchResult}");
+                Console.ResetColor();
+            }            
         }
     }
 }
